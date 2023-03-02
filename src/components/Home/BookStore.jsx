@@ -2,6 +2,7 @@ import React from 'react';
 import BookContainer from './BookContainer';
 import BookEntryForm from './BookEntryForm';
 import Filters from './Filters';
+import Navbar from './Navbar';
 
 const BookStore = () => {
     return (

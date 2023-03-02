@@ -1,2 +1,2 @@
-export const STATUSCHANGED = "todos/statusChanged";
-export const COLORCHANGED = "todos/colorChanged";
+export const STATUS_CHANGED = "filters/statusChanged";
+export const SEARCH_TEXT = "filters/searchText";

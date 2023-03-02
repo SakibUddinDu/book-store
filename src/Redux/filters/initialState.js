@@ -1,5 +1,5 @@
 const initialState = {
     status: "All",
-    colors: [],
+    searchText:'',
 };
 export default initialState;
