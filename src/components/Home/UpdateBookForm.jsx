@@ -5,7 +5,6 @@ import updateBook from './../../Redux/thunk/updateBook';
 
 const UpdateBookForm = ({bookData}) => {
   const dispatch =useDispatch()
-
   const [updateformData, setUpdateformData] = useState({...bookData});
 
   console.log(updateformData);
@@ -21,14 +20,14 @@ const UpdateBookForm = ({bookData}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(updateBook(updateformData));
-    // setUpdateformData({
-    //   name: '',
-    //   author: '',
-    //   thumbnail: '',
-    //   price: 0,
-    //   rating: 0,
-    //   featured: false
-    // });
+    setUpdateformData({
+      name: '',
+      author: '',
+      thumbnail: '',
+      price: 0,
+      rating: 0,
+      featured: false
+    });
   };
     return (
         <div>
@@ -108,7 +107,7 @@ const UpdateBookForm = ({bookData}) => {
                   name="featured"
                   className="w-4 h-4"
                   onChange={handleChange}
-                  checked={bookData.featured}
+                  checked={updateformData.featured}
                 />
                 <label htmlFor="featured" className="ml-2 text-sm">
                   This is a featured book

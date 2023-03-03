@@ -109,7 +109,7 @@ const BookEntryForm = () => {
                   type="checkbox"
                   name="featured"
                   className="w-4 h-4"
-                  onChange={handleChange}
+                  onClick={handleChange}
                   checked={formData.featured}
                 />
                 <label htmlFor="featured" className="ml-2 text-sm">
