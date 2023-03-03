@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { added } from '../Bookstore/actions';
+import { updated } from '../Bookstore/actions';
 const updateBook =(bookData)=>{
     return async (dispatch, getState)=>{
 
@@ -14,7 +14,7 @@ const updateBook =(bookData)=>{
             },
         })
         const book = await response.json()
-        // dispatch(added(book))
+        dispatch(updated(book))
         
     }
 }

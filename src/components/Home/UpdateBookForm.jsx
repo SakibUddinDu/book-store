@@ -20,7 +20,7 @@ const UpdateBookForm = ({bookData}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // dispatch(updateBook(updateformData));
+    dispatch(updateBook(updateformData));
     // setUpdateformData({
     //   name: '',
     //   author: '',
