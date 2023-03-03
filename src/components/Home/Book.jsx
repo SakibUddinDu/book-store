@@ -1,7 +1,10 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import deleteBook from '../../Redux/thunk/delelteBook';
 
 const Book = ({book}) => {
-  const {name, author, thumbnail, price, rating, featured} =book;
+  const dispatch = useDispatch()
+  const {id, name, author, thumbnail, price, rating, featured} =book;
 
   const stars = [];
   for (let i = 0; i < rating; i++) {
@@ -17,6 +20,10 @@ const Book = ({book}) => {
         clipRule="evenodd"
       />
     </svg>);
+  }
+
+  const handleDelete = (deleteItemId) =>{
+      dispatch(deleteBook(deleteItemId))
   }
 
     return (
@@ -45,7 +52,7 @@ const Book = ({book}) => {
                   />
                 </svg>
               </button>
-              <button className="lws-delete">
+              <button className="lws-delete" onClick={()=> handleDelete(id)}>
                 <svg
                   fill="none"
                   viewBox="0 0 24 24"

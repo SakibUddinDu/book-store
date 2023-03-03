@@ -25,16 +25,16 @@
       "price": 23.99,
       "rating": 4,
       "featured": true,
-      "id": 4
+      "id": 3
     },
     {
-      "name": "Eloquent JS",
-      "author": "Martin Js",
-      "thumbnail": "https://images.pexels.com/photos/11116449/pexels-photo-11116449.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "price": "3000",
-      "rating": "5",
+      "name": "Eloquent JavaScript, 3rd Edi",
+      "author": "Marijn Haverbeke",
+      "thumbnail": "https://m.media-amazon.com/images/I/51InjRPaF7L._SX377_BO1,204,203,200_.jpg",
+      "price": 23.99,
+      "rating": 4,
       "featured": true,
-      "id": 6
+      "id": 4
     }
   ]
 }

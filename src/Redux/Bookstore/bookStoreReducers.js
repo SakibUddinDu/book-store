@@ -1,4 +1,4 @@
-import { ADD_BOOKS, LOADED } from "./actionTypes";
+import { ADD_BOOKS, DELETED, LOADED } from "./actionTypes";
 import  initialState  from "./initialState";
 
 // const intialState =[
@@ -31,6 +31,9 @@ const bookStoreReducers = (state=initialState, action)=>{
                     id:nextBookId(state),  
                 } 
             ];
+            
+        case DELETED:
+            return state.filter((book) => book.id !== action.payload);
         // case CARD_QUANTITY_DECREASER:
         //     return state.map((product) =>{
         //         if(product.id !== action.payload.id){
