@@ -3,9 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import fetchBooks from './../../Redux/thunk/fetchBooks';
 
-const BookContainer = () => {
-    const books = useSelector((state) => state.bookStore)
+const BookContainer = ({showComponent,setShowComponent, setBookData}) => {
+    
     const filters = useSelector((state) => state.filters)
+    const books = useSelector((state) => state.bookStore)
 
     const {status, searchText} = filters;
     const dispatch = useDispatch();
@@ -39,7 +40,7 @@ const BookContainer = () => {
                 books
                 .filter((book) =>book.name.toLowerCase().includes(searchText.toLowerCase()))
                 .filter(filterByStatus)
-                .map((book)=> <Book key={book.id} book={book}></Book> )
+                .map((book)=> <Book key={book.id} book={book} setBookData={setBookData} showComponent={showComponent} setShowComponent={setShowComponent}></Book> )
             }
                      
         </div>

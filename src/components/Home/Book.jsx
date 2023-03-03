@@ -1,10 +1,11 @@
-import React from 'react';
 import { useDispatch } from 'react-redux';
-import deleteBook from '../../Redux/thunk/delelteBook';
+import deleteBook from '../../Redux/thunk/deleteBook';
+import updateBook from '../../Redux/thunk/updateBook';
 
-const Book = ({book}) => {
+const Book = ({book,showComponent, setShowComponent,setBookData}) => {
   const dispatch = useDispatch()
   const {id, name, author, thumbnail, price, rating, featured} =book;
+  console.log(book)
 
   const stars = [];
   for (let i = 0; i < rating; i++) {
@@ -25,6 +26,13 @@ const Book = ({book}) => {
   const handleDelete = (deleteItemId) =>{
       dispatch(deleteBook(deleteItemId))
   }
+  const handleUpdate = (bookData) =>{
+    console.log(bookData);
+    setBookData(bookData)
+    setShowComponent(!showComponent)
+     dispatch(updateBook(bookData));
+  }
+  
 
     return (
         <div className="book-card">
@@ -37,7 +45,7 @@ const Book = ({book}) => {
           <div className="flex items-center justify-between">
           {featured && <span className="badge-success lws-Badge">Featured</span> }
             <div className="text-gray-500 space-x-2">
-              <button className="lws-edit">
+              <button className="lws-edit"  onClick={()=> handleUpdate(book) }>
                 <svg
                   fill="none"
                   viewBox="0 0 24 24"

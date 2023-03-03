@@ -1,4 +1,4 @@
-import { ADD_BOOKS, LOADED, DELETED } from './actionTypes';
+import { ADD_BOOKS, LOADED, DELETED, UPDATED, } from './actionTypes';
 
 export const added = (formData)=>{
     return{
@@ -19,12 +19,10 @@ export const deleted =(deleteItemId)=>{
         payload: deleteItemId
     }
 }
-// export const cardQuantityDecreser= (id, quantity)=>{
-//     return{
-//         type: CARD_QUANTITY_DECREASER,
-//         payload: {
-//             id,
-//             quantity
-//         }
-//     }
-// }
+
+export const updated =(updatedData)=>{
+    return {
+        type: UPDATED,
+        payload: updatedData
+    }
+}

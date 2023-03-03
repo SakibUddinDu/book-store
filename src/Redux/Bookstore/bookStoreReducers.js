@@ -1,5 +1,6 @@
-import { ADD_BOOKS, DELETED, LOADED } from "./actionTypes";
+import { ADD_BOOKS, DELETED, LOADED, UPDATED } from "./actionTypes";
 import  initialState  from "./initialState";
+import updateBook from './../thunk/updateBook';
 
 // const intialState =[
 //     {
@@ -34,31 +35,17 @@ const bookStoreReducers = (state=initialState, action)=>{
             
         case DELETED:
             return state.filter((book) => book.id !== action.payload);
-        // case CARD_QUANTITY_DECREASER:
-        //     return state.map((product) =>{
-        //         if(product.id !== action.payload.id){
-        //             return product;
-        //         } else{
-        //              return {
-        //                 ...product,
-        //                 quantity: action.payload.quantity - 1,
-        //             }
-        //         }
-        //         // if(product.id === action.payload.id){
-        //             // return {
-        //             //     ...product,
-        //             //     quantity: action.payload.quantity - 1,
-        //             // }
 
-        //         // }
-        //     })
+        // case UPDATED:
+        //     return state.filter((book) => book.id !== action.payload);
         
-    
         default:
             return state;
     }
 }
 export default bookStoreReducers;
+
+
 
 
 
